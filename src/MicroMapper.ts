@@ -68,18 +68,18 @@ export class MicroMapper {
    * @returns A object serialized as Plain Javascript Object
    */
   serializeSchema<T>(value: T, schema: Schema): JSONValue {
-    const parsed = {};
+    const object = {};
 
     if (schema.props != null) {
       Object.entries(schema.props).forEach(
         ([prop, schema]) => {
           if (prop in value) {
-            parsed[prop] = this.serialize(value[prop], schema);
+            object[prop] = this.serialize(value[prop], schema);
           }
         });
     }
 
-    return parsed;
+    return object;
   }
 
   /**
@@ -89,20 +89,19 @@ export class MicroMapper {
    * @returns An object deserialized .
    */
   deserializeSchema<T>(value: JSONValue, schema: Schema): T {
-    const parsed = Object.create(
-      schema.class.prototype
-    );
+    const params = schema.params?.(value) ?? [];
+    const object = Reflect.construct(schema.class, params);
 
     if (schema.props != null) {
       Object.entries(schema.props).forEach(
         ([prop, schema]) => {
           if (prop in value) {
-            parsed[prop] = this.deserialize(value[prop], schema);
+            object[prop] = this.deserialize(value[prop], schema);
           }
         });
     }
 
-    return parsed;
+    return object;
   }
 
   /**
