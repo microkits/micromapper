@@ -5,7 +5,7 @@ export type Constructor<T = unknown> = (
 export interface Schema {
   class: Constructor;
   params?: (value: unknown) => any[]
-  props: {
+  props?: {
     [key: string]: Options
   }
 }
