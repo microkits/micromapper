@@ -1,6 +1,6 @@
 {
   "name": "@microkits/micromapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A JavaScript object serialization and deserialization library.",
   "author": {
     "name": "Guilherme Covre Dalleprane",
