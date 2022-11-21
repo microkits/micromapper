@@ -7,6 +7,7 @@ export class PrimitiveMapper implements Mapper {
   }
   
   serialize(value: unknown, type: Function): JSONValue {
-    return type(value).valueOf()
+    if (value != null)
+      return type(value).valueOf()
   }
 }
