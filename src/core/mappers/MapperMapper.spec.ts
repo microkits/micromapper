@@ -1,13 +1,13 @@
-import { MapperMapper } from './MapperMapper';
+import { MapperMapper } from "./MapperMapper";
 
-describe('MapperMapper', () => {
-  it('should map input to output', () => {
+describe("MapperMapper", () => {
+  it("should map input to output", () => {
     interface Input {
       name: string;
     }
 
     const input: Input = {
-      name: 'John Doe'
+      name: "John Doe"
     }
 
     const mapper = new MapperMapper<Input, string>((input) => ({
@@ -18,13 +18,13 @@ describe('MapperMapper', () => {
     expect(output).toEqual(input.name)
   });
 
-  it('should return undefined if mapper is not defined', () => {
+  it("should return undefined if mapper is not defined", () => {
     interface Input {
       name: string;
     }
 
     const input: Input = {
-      name: 'John Doe'
+      name: "John Doe"
     }
 
     const mapper = new MapperMapper<Input, string>((input) => undefined);
@@ -33,7 +33,7 @@ describe('MapperMapper', () => {
     expect(output).toBeUndefined()
   });
 
-  it('should return undefined if input is not defined', () => {
+  it("should return undefined if input is not defined", () => {
     interface Input {
       name: string;
     }

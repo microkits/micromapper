@@ -62,7 +62,7 @@ describe("ClassMapper", () => {
     expect(output).toBeInstanceOf(TestClass);
   });
 
-  it('should return mapped class with props', () => {
+  it("should return mapped class with props", () => {
     const mapper = new ClassMapper(TestClass)
       .props({
         value: {
@@ -75,7 +75,7 @@ describe("ClassMapper", () => {
     expect(result.value).toBe("123");
   });
 
-  it('should return mapped class with args', () => {
+  it("should return mapped class with args", () => {
     const mapper = new ClassMapper(TestClass)
       .args([{
         map: (input: number) => input.toString(),

@@ -7,49 +7,49 @@ import { InputMapper } from "./mappers/InputMapper";
 import { ObjectMapper } from "./mappers/ObjectMapper";
 import { ValueMapper } from "./mappers/ValueMapper";
 
-describe('MapperBuilder', () => {
+describe("MapperBuilder", () => {
   describe("MapperBuilder.class", () => {
-    it('should return a ClassMapper object', () => {
+    it("should return a ClassMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.class(null);
       expect(mapper).toBeInstanceOf(ClassMapper);
     });
   });
 
-  describe('MapperBuilder.array', () => {
-    it('should return a ArrayMapper object', () => {
+  describe("MapperBuilder.array", () => {
+    it("should return a ArrayMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.array(null);
       expect(mapper).toBeInstanceOf(ArrayMapper);
     });
   });
 
-  describe('MapperBuilder.object', () => {
-    it('should return a ObjectMapper object', () => {
+  describe("MapperBuilder.object", () => {
+    it("should return a ObjectMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.object(null);
       expect(mapper).toBeInstanceOf(ObjectMapper);
     });
   });
 
-  describe('MapperBuilder.string', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.string", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.string(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
     });
   });
 
-  describe('MapperBuilder.date', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.date", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.date(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
     });
   });
 
-  describe('MapperBuilder.bigint', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.bigint", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.bigint(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
@@ -72,24 +72,24 @@ describe('MapperBuilder', () => {
     })
   });
 
-  describe('MapperBuilder.symbol', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.symbol", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.symbol(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
     });
   });
 
-  describe('MapperBuilder.number', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.number", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.number(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
     });
   });
 
-  describe('MapperBuilder.boolean', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.boolean", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.boolean(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
@@ -104,16 +104,16 @@ describe('MapperBuilder', () => {
     });
   });
 
-  describe('MapperBuilder.mapper', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.mapper", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.mapper(null);
       expect(mapper).toBeInstanceOf(AbstractMapper);
     });
   });
 
-  describe('MapperBuilder.value', () => {
-    it('should return a ValueMapper object', () => {
+  describe("MapperBuilder.value", () => {
+    it("should return a ValueMapper object", () => {
       const builder = new MapperBuilder()
       const mapper = builder.value(null);
       expect(mapper).toBeInstanceOf(ValueMapper);
