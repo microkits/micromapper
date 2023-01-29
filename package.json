@@ -1,0 +1,44 @@
+{
+  "name": "@microkits/micromapper",
+  "version": "0.1.0",
+  "description": "Helps you to create object mappings in a simple and fluid way.",
+  "author": {
+    "name": "Guilherme Covre Dalleprane",
+    "email": "guilherme.dalleprane@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "microkits/micromapper",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "test": "jest --color",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.3",
+    "@types/node": "^14.14.20",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "jest": "^29.0.3",
+    "ts-jest": "^29.0.3",
+    "tsc": "^2.0.3",
+    "typescript": "^4.7.3"
+  },
+  "keywords": [
+    "json",
+    "parse",
+    "parser",
+    "mapper",
+    "serializer",
+    "serialization",
+    "deserializer",
+    "deserialization",
+    "javascript",
+    "typescript"
+  ]
+}
