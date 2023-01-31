@@ -6,4 +6,5 @@ export { ClassMapper } from "./core/mappers/ClassMapper";
 export { EachMapper } from "./core/mappers/EachMapper";
 export { MapperMapper } from "./core/mappers/MapperMapper";
 export { ObjectMapper } from "./core/mappers/ObjectMapper";
+export { PropMapper } from "./core/mappers/PropMapper";
 export { ValueMapper } from "./core/mappers/ValueMapper";

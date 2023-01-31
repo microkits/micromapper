@@ -9,6 +9,7 @@ import { ValueMapper } from "./mappers/ValueMapper";
 import { Constructor, FunctionOrReturnType, Handler, MapperFactory } from "../types";
 import { EachMapper } from "./mappers/EachMapper";
 import { InputMapper } from "./mappers/InputMapper";
+import { PropMapper } from "./mappers/PropMapper";
 
 export class MapperBuilder<TInput> {
   array<TOutput>(handler: Handler<TInput, TOutput[]>): ArrayMapper<TInput, TOutput> {
@@ -48,6 +49,27 @@ export class MapperBuilder<TInput> {
     return new InputMapper();
   }
 
+  mapper<TOutput>(handler: Handler<TInput, AbstractMapper<TInput, TOutput>>): MapperMapper<TInput, TOutput> {
+    return new MapperMapper(handler);
+  }
+
+  prop<TOutput, TElement>(
+    selector: (input: TInput) => TElement,
+    mapper: FunctionOrReturnType<MapperFactory<TElement, TOutput>>
+  ) {
+    if (typeof mapper === "function") {
+      mapper = mapper(
+        new MapperBuilder<TElement>()
+      );
+    }
+
+    return new PropMapper(selector, mapper);
+  }
+
+  number(handler: Handler<TInput, number>): ValueMapper<TInput, number> {
+    return new ValueMapper(handler);
+  }
+
   object<TOutput>(options: ObjectMapperOptions<TInput, TOutput>): ObjectMapper<TInput, TOutput> {
     return new ObjectMapper(options);
   }
@@ -57,14 +79,6 @@ export class MapperBuilder<TInput> {
   }
 
   symbol(handler: Handler<TInput, symbol>): ValueMapper<TInput, symbol> {
-    return new ValueMapper(handler);
-  }
-
-  mapper<TOutput>(handler: Handler<TInput, AbstractMapper<TInput, TOutput>>): MapperMapper<TInput, TOutput> {
-    return new MapperMapper(handler);
-  }
-
-  number(handler: Handler<TInput, number>): ValueMapper<TInput, number> {
     return new ValueMapper(handler);
   }
 

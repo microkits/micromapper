@@ -5,6 +5,7 @@ import { ClassMapper } from "./mappers/ClassMapper";
 import { EachMapper } from "./mappers/EachMapper";
 import { InputMapper } from "./mappers/InputMapper";
 import { ObjectMapper } from "./mappers/ObjectMapper";
+import { PropMapper } from "./mappers/PropMapper";
 import { ValueMapper } from "./mappers/ValueMapper";
 
 describe("MapperBuilder", () => {
@@ -69,6 +70,22 @@ describe("MapperBuilder", () => {
         builder.input()
       ));
       expect(mapper).toBeInstanceOf(EachMapper);
+    })
+  });
+
+  describe("MapperBuilder.prop", () => {
+    it("should create a PropMapper with the given selector and mapper", () => {
+      const builder = new MapperBuilder()
+      const mapper = builder.prop(null, null);
+      expect(mapper).toBeInstanceOf(PropMapper);
+    });
+
+    it("should create a PropMapper with the given selector and mapper factory", () => {
+      const builder = new MapperBuilder()
+      const mapper = builder.prop(null, (builder) => (
+        builder.input()
+      ));
+      expect(mapper).toBeInstanceOf(PropMapper);
     })
   });
 
