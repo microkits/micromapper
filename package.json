@@ -1,6 +1,6 @@
 {
   "name": "@microkits/micromapper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Helps you to create object mappings in a simple and fluid way.",
   "author": {
     "name": "Guilherme Covre Dalleprane",
